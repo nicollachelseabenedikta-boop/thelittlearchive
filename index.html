@@ -1,0 +1,3723 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Something I Wanted To Say</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=Special+Elite&family=Parisienne&display=swap" rel="stylesheet">
+
+<style>
+
+/* =====================================================
+   ROOT
+===================================================== */
+
+:root{
+  --paper:#d9c9ae;
+  --paper-light:#e7dbc7;
+  --paper-dark:#b89e7e;
+
+  --ink:#302a25;
+  --brown:#68483a;
+  --dark-brown:#493329;
+
+  --navy:#24394b;
+  --blue:#587184;
+  --dusty-blue:#8799a1;
+
+  --olive:#626b54;
+  --sage:#7e866d;
+
+  --burgundy:#75494a;
+  --muted-red:#96605a;
+
+  --shadow:rgba(42,32,24,.28);
+}
+
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  color:var(--ink);
+
+  font-family:"DM Sans",sans-serif;
+
+  overflow-x:hidden;
+
+  background:
+    radial-gradient(
+      circle at 15% 12%,
+      rgba(48,42,37,.18) 0 1px,
+      transparent 1.6px
+    ),
+    radial-gradient(
+      circle at 75% 35%,
+      rgba(36,57,75,.12) 0 1px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle at 42% 75%,
+      rgba(117,73,74,.12) 0 1px,
+      transparent 1.5px
+    ),
+    linear-gradient(
+      135deg,
+      #bbaa91,
+      #d0bea2 45%,
+      #bca88d
+    );
+
+  background-size:
+    19px 19px,
+    27px 27px,
+    35px 35px,
+    auto;
+}
+
+body::before{
+  content:"";
+
+  position:fixed;
+  inset:0;
+
+  pointer-events:none;
+
+  z-index:999;
+
+  opacity:.15;
+
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent 0,
+      transparent 3px,
+      rgba(50,40,30,.08) 4px
+    );
+
+  mix-blend-mode:multiply;
+}
+
+button,
+input{
+  font:inherit;
+}
+
+
+/* =====================================================
+   GENERAL
+===================================================== */
+
+section{
+  position:relative;
+
+  min-height:100vh;
+
+  padding:80px 16px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.paper{
+  position:relative;
+  overflow:hidden;
+}
+
+.paper::after{
+  content:"";
+
+  position:absolute;
+  inset:0;
+
+  pointer-events:none;
+
+  background:
+    radial-gradient(
+      circle at 10% 17%,
+      rgba(70,52,35,.15) 0 1px,
+      transparent 1.6px
+    ),
+    radial-gradient(
+      circle at 71% 30%,
+      rgba(36,57,75,.10) 0 1px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle at 34% 79%,
+      rgba(117,73,74,.10) 0 1px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle at 90% 72%,
+      rgba(70,52,35,.12) 0 1px,
+      transparent 1.5px
+    );
+
+  background-size:
+    31px 29px,
+    41px 37px,
+    47px 43px,
+    53px 49px;
+
+  opacity:.8;
+
+  mix-blend-mode:multiply;
+}
+
+.label{
+  display:inline-block;
+
+  padding:8px 13px;
+
+  background:var(--navy);
+  color:#e9decb;
+
+  font-family:"Special Elite",monospace;
+
+  font-size:9px;
+
+  letter-spacing:2px;
+
+  box-shadow:
+    3px 4px 0 rgba(69,49,34,.17);
+}
+
+.hand-note{
+  font-family:"Special Elite",monospace;
+
+  font-size:10px;
+
+  line-height:1.6;
+
+  letter-spacing:.4px;
+
+  color:var(--brown);
+}
+
+.tape{
+  position:absolute;
+
+  width:100px;
+  height:27px;
+
+  background:rgba(186,165,132,.68);
+
+  box-shadow:
+    0 2px 5px rgba(40,30,20,.12);
+
+  z-index:8;
+}
+
+.tape.blue{
+  background:rgba(93,119,135,.48);
+}
+
+.tape.one{
+  top:18px;
+  left:25px;
+  transform:rotate(-5deg);
+}
+
+.tape.two{
+  top:20px;
+  right:22px;
+  transform:rotate(7deg);
+}
+
+.paperclip{
+  position:absolute;
+
+  width:22px;
+  height:65px;
+
+  border:3px solid var(--navy);
+
+  border-bottom:0;
+
+  border-radius:15px 15px 0 0;
+
+  opacity:.7;
+
+  transform:rotate(11deg);
+}
+
+.vintage-stamp{
+  position:absolute;
+
+  padding:12px 13px;
+
+  border:1px dashed var(--navy);
+
+  background:#aebbc0;
+
+  color:var(--navy);
+
+  font-family:"Special Elite",monospace;
+
+  font-size:9px;
+
+  letter-spacing:1px;
+
+  transform:rotate(-7deg);
+
+  box-shadow:
+    2px 4px 7px rgba(40,30,20,.13);
+
+  z-index:7;
+}
+
+.vintage-stamp::before{
+  content:"✦ ARCHIVE ✦";
+}
+
+.postmark{
+  width:72px;
+  height:72px;
+
+  border:1px dashed var(--navy);
+
+  border-radius:50%;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  text-align:center;
+
+  color:var(--navy);
+
+  font-family:"Special Elite",monospace;
+
+  font-size:8px;
+
+  line-height:1.4;
+
+  transform:rotate(12deg);
+
+  opacity:.7;
+}
+
+
+/* =====================================================
+   OPENING
+===================================================== */
+
+#opening{
+  background:
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(36,57,75,.13),
+      transparent 65%
+    );
+}
+
+.opening-paper{
+  width:min(690px,94%);
+
+  padding:82px 30px 70px;
+
+  background:var(--paper);
+
+  box-shadow:
+    0 30px 70px var(--shadow),
+    7px 9px 0 rgba(72,50,38,.15);
+
+  transform:rotate(-.6deg);
+}
+
+.opening-paper::before{
+  content:"";
+
+  position:absolute;
+  inset:17px;
+
+  border:1px dashed rgba(36,57,75,.38);
+
+  pointer-events:none;
+}
+
+.opening-paper .vintage-stamp{
+  top:76px;
+  left:31px;
+}
+
+.opening-paper .tape{
+  top:22px;
+}
+
+.opening-paper .paperclip{
+  top:75px;
+  right:45px;
+}
+
+.opening-title{
+  position:relative;
+  z-index:3;
+
+  margin:42px 0 0;
+
+  text-align:center;
+
+  color:var(--navy);
+
+  font-family:"Cormorant Garamond",serif;
+
+  font-size:clamp(43px,10vw,76px);
+
+  font-weight:600;
+
+  line-height:.9;
+
+  letter-spacing:-1px;
+}
+
+.opening-script{
+  position:relative;
+  z-index:3;
+
+  margin:28px 0 17px;
+
+  text-align:center;
+
+  color:var(--brown);
+
+  font-family:"Parisienne",cursive;
+
+  font-size:43px;
+}
+
+.opening-copy{
+  position:relative;
+  z-index:3;
+
+  max-width:510px;
+
+  margin:auto;
+
+  text-align:center;
+
+  font-family:"Cormorant Garamond",serif;
+
+  font-size:23px;
+
+  line-height:1.5;
+}
+
+.take-time{
+  position:relative;
+  z-index:3;
+
+  margin-top:20px;
+
+  text-align:center;
+
+  color:var(--olive);
+
+  font-family:"Special Elite",monospace;
+
+  font-size:10px;
+
+  letter-spacing:1px;
+}
+
+.opening-postmark{
+  position:absolute;
+
+  right:30px;
+  bottom:29px;
+
+  z-index:3;
+}
+
+.opening-bottom{
+  position:relative;
+  z-index:3;
+
+  margin-top:55px;
+
+  text-align:center;
+
+  color:var(--navy);
+
+  font-family:"Special Elite",monospace;
+
+  font-size:9px;
+
+  letter-spacing:2px;
+
+  animation:softFloat 2.2s ease-in-out infinite;
+}
+
+@keyframes softFloat{
+
+  50%{
+    transform:translateY(5px);
+    opacity:.55;
+  }
+
+}
+
+
+/* =====================================================
+   SCRAPBOOK
+===================================================== */
+
+#scrapbook{
+  background:
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(36,57,75,.15),
+      transparent 65%
+    );
+}
+
+.scrapbook-wrap{
+  width:min(700px,95%);
+
+  perspective:1600px;
+}
+
+.scrapbook-book{
+  position:relative;
+
+  width:100%;
+
+  min-height:485px;
+
+  transform-style:preserve-3d;
+
+  cursor:pointer;
+
+  transition:
+    transform 1.15s cubic-bezier(.2,.8,.2,1);
+}
+
+.scrapbook-book.open{
+  transform:rotateY(-180deg);
+}
+
+.book-page{
+  position:absolute;
+  inset:0;
+
+  min-height:485px;
+
+  backface-visibility:hidden;
+
+  box-shadow:
+    0 28px 60px var(--shadow),
+    8px 10px 0 rgba(72,50,38,.15);
+}
+
+.book-front{
+  background:
+    linear-gradient(
+      135deg,
+      #6c7768,
+      #566557
+    );
+
+  border:10px solid #665544;
+
+  display:flex;
+  flex-direction:column;
+
+  align-items:center;
+  justify-content:center;
+}
+
+.book-front::before{
+  content:"";
+
+  position:absolute;
+  inset:17px;
+
+  border:1px solid rgba(235,224,207,.68);
+}
+
+.book-front .label{
+  background:var(--paper);
+  color:var(--navy);
+
+  margin-bottom:27px;
+}
+
+.book-title{
+  position:relative;
+  z-index:2;
+
+  text-align:center;
+
+  color:#e8dfd0;
+
+  font-family:"Cormorant Garamond",serif;
+
+  font-size:57px;
+
+  line-height:.85;
+}
+
+.book-small{
+  position:relative;
+  z-index:2;
+
+  margin-top:30px;
+
+  color:#ded4c3;
+
+  font-family:"Special Elite",monospace;
+
+  font-size:9px;
+
+  letter-spacing:2px;
+}
+
+.book-back{
+  transform:rotateY(180deg);
+
+  padding:30px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #d2c0a3,
+      #baa183
+    );
+}
+
+.book-back::before{
+  content:"";
+
+  position:absolute;
+  inset:17px;
+
+  border:1px dashed rgba(36,57,75,.42);
+}
+
+.scrap{
+  position:absolute;
+
+  width:220px;
+
+  padding:20px;
+
+  background:var(--paper-light);
+
+  box-shadow:
+    5px 7px 14px rgba(45,32,23,.17);
+}
+
+.scrap.one{
+  top:70px;
+  left:50px;
+
+  transform:rotate(-6deg);
+}
+
+.scrap.two{
+  right:45px;
+  bottom:58px;
+
+  background:#aab6b6;
+
+  transform:rotate(5deg);
+}
+
+.scrap h3{
+  margin:0 0 8px;
+
+  color:var(--brown);
+
+  font-family:"Cormorant Garamond",serif;
+
+  font-size:28px;
+}
+
+.scrap p{
+  margin:0;
+
+  font-family:"Special Elite",monospace;
+
+  font-size:9px;
+
+  line-height:1.7;
+}
+
+.book-postmark{
+  position:absolute;
+
+  top:54px;
+  right:52px;
+}
+
+.book-clip{
+  position:absolute;
+
+  bottom:40px;
+  left:270px;
+}
+
+
+/* =====================================================
+   MAIN ENVELOPE
+===================================================== */
+
+#envelope{
+  flex-direction:column;
+
+  padding-top:70px;
+}
+
+.envelope-stage{
+  position:relative;
+
+  width:min(620px,96%);
+
+  height:540px;
+
+  margin-top:30px;
+}
+
+
+/*
+  ENVELOPE STRUCTURE
+
+  1. letter
+  2. envelope base
+  3. front pocket
+  4. flap
+  5. seal
+
+  Saat dibuka, letter dinaikkan dan diberi
+  z-index lebih tinggi daripada pocket.
+*/
+
+.envelope{
+  position:absolute;
+
+  left:50%;
+  bottom:40px;
+
+  width:min(560px,100%);
+
+  height:315px;
+
+  transform:translateX(-50%);
+
+  perspective:1200px;
+}
+
+
+/* LETTER */
+
+.main-letter-holder{
+  position:absolute;
+
+  left:7%;
+  bottom:24px;
+
+  width:86%;
+  height:310px;
+
+  z-index:2;
+
+  pointer-events:none;
+}
+
+.main-letter{
+  position:absolute;
+
+  left:0;
+  bottom:0;
+
+  width:100%;
+  min-height:290px;
+
+  padding:36px 30px;
+
+  background:var(--paper-light);
+
+  box-shadow:
+    0 8px 18px rgba(40,30,20,.19);
+
+  transform:translateY(120px);
+
+  transition:
+    transform 1.1s cubic-bezier(.18,.85,.22,1);
+
+  overflow:hidden;
+}
+
+.main-letter .paperclip{
+  right:20px;
+  top:20px;
+}
+
+.main-letter h3{
+  margin:0 0 14px;
+
+  color:var(--brown);
+
+  font-family:"Cormorant Garamond",serif;
+
+  font-size:31px;
+}
+
+.main-letter p{
+  margin:0;
+
+  font-family:"Cormorant Garamond",serif;
+
+  font-size:20px;
+
+  line-height:1.5;
+}
+
+
+/* ENVELOPE BASE */
+
+.envelope-base{
+  position:absolute;
+
+  inset:0;
+
+  z-index:3;
+
+  background:
+    linear-gradient(
+      145deg,
+      #c3a17d,
+      #a98765
+    );
+
+  box-shadow:
+    0 25px 45px rgba(50,35,25,.28);
+}
+
+
+/* SIDE FOLDS */
+
+.envelope-left{
+  position:absolute;
+
+  left:0;
+  top:0;
+
+  width:50%;
+  height:100%;
+
+  background:#b59370;
+
+  clip-path:
+    polygon(
+      0 0,
+      100% 50%,
+      0 100%
+    );
+
+  z-index:4;
+}
+
+.envelope-right{
+  position:absolute;
+
+  right:0;
+  top:0;
+
+  width:50%;
+  height:100%;
+
+  background:#b18e6c;
+
+  clip-path:
+    polygon(
+      100% 0,
+      0 50%,
+      100% 100%
+    );
+
+  z-index:4;
+}
+
+
+/* FRONT POCKET */
+
+.envelope-pocket{
+  position:absolute;
+
+  left:0;
+  bottom:0;
+
+  width:100%;
+  height:73%;
+
+  background:
+    linear-gradient(
+      150deg,
+      #c7a582,
+      #ab8968
+    );
+
+  clip-path:
+    polygon(
+      0 0,
+      50% 56%,
+      100% 0,
+      100% 100%,
+      0 100%
+    );
+
+  z-index:5;
+}
+
+
+/* FLAP */
+
+.envelope-flap{
+  position:absolute;
+
+  left:0;
+  top:0;
+
+  width:100%;
+  height:190px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #d0ae88,
+      #b38f6d
+    );
+
+  clip-path:
+    polygon(
+      0 0,
+      100% 0,
+      50% 78%
+    );
+
+  transform-origin:top center;
+
+  transition:
+    transform 1s cubic-bezier(.2,.8,.2,1);
+
+  z-index:8;
+}
+
+.envelope.open .envelope-flap{
+  transform:
+    rotateX(180deg);
+}
+
+
+/*
+  LETTER AFTER OPEN:
+  z-index changes above pocket,
+  so it cannot stay behind the envelope.
+*/
+
+.envelope.open .main-letter-holder{
+  z-index:9;
+}
+
+.envelope.open .main-letter{
+  transform:translateY(-205px);
+}
+
+
+/* SEAL */
+
+.seal{
+  position:absolute;
+
+  left:50%;
+  top:112px;
+
+  transform:translateX(-50%);
+
+  width:68px;
+  height:68px;
+
+  border-radius:50%;
+
+  background:var(--burgundy);
+
+  color:#eadfce;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-family:"Cormorant Garamond",serif;
+
+  font-size:26px;
+
+  cursor:pointer;
+
+  z-index:12;
+
+  box-shadow:
+    0 8px 18px rgba(70,35,35,.3);
+
+  animation:sealPulse 2s infinite;
+
+  transition:
+    opacity .4s,
+    transform .5s;
+}
+
+.envelope.open .seal{
+  opacity:0;
+
+  pointer-events:none;
+
+  transform:
+    translateX(-50%)
+    scale(.5);
+}
+
+@keyframes sealPulse{
+
+  50%{
+    transform:
+      translateX(-50%)
+      scale(1.08);
+  }
+
+}
+
+.envelope-hint{
+  color:var(--navy);
+
+  font-family:"Special Elite",monospace;
+
+  font-size:9px;
+
+  letter-spacing:2px;
+}
+
+
+/* =====================================================
+   LOCK
+===================================================== */
+
+#lock{
+  background:
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(36,57,75,.16),
+      transparent 65%
+    );
+}
+
+.lock-card{
+  position:relative;
+
+  width:min(650px,95%);
+
+  padding:52px 25px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #d2c0a4,
+      #c0a88a
+    );
+
+  box-shadow:
+    0 30px 65px var(--shadow);
+
+  text-align:center;
+}
+
+.lock-card::before{
+  content:"";
+
+  position:absolute;
+
+  inset:15px;
+
+  border:1px dashed rgba(36,57,75,.42);
+
+  pointer-events:none;
+}
+
+.lock-card > *{
+  position:relative;
+  z-index:2;
+}
+
+.lock-title{
+  margin:17px 0 7px;
+
+  color:var(--navy);
+
+  font-family:"Cormorant Garamond",serif;
+
+  font-size:45px;
+}
+
+.lock-sub{
+  color:var(--brown);
+
+  font-family:"Cormorant Garamond",serif;
+
+  font-size:20px;
+
+  line-height:1.4;
+}
+
+.lock-preview{
+  width:90%;
+
+  margin:30px auto;
+
+  padding:24px;
+
+  background:#d9d0c1;
+
+  box-shadow:
+    inset 0 0 20px rgba(50,40,30,.12);
+}
+
+.blur-line{
+  height:11px;
+
+  margin:13px 0;
+
+  border-radius:7px;
+
+  background:#6d6962;
+
+  opacity:.55;
+
+  filter:blur(5px);
+}
+
+.pin-input{
+  width:190px;
+
+  padding:13px;
+
+  background:#eee4d3;
+
+  border:1px solid var(--navy);
+
+  outline:none;
+
+  text-align:center;
+
+  letter-spacing:7px;
+
+  color:var(--navy);
+
+  font-size:20px;
+}
+
+.unlock-button{
+  display:block;
+
+  margin:15px auto 0;
+
+  padding:12px 27px;
+
+  border:0;
+
+  background:var(--navy);
+
+  color:#eee4d3;
+
+  cursor:pointer;
+
+  letter-spacing:1px;
+}
+
+.error{
+  min-height:28px;
+
+  margin-top:17px;
+
+  color:var(--burgundy);
+
+  font-family:"Special Elite",monospace;
+
+  font-size:11px;
+}
+
+.hint{
+  max-height:0;
+
+  overflow:hidden;
+
+  opacity:0;
+
+  color:var(--navy);
+
+  font-family:"Cormorant Garamond",serif;
+
+  font-size:19px;
+
+  transition:.7s;
+}
+
+.hint.show{
+  max-height:90px;
+
+  opacity:1;
+
+  margin-top:8px;
+}
+
+
+/* =====================================================
+   BLUR ENTIRE LETTER
+===================================================== */
+
+body.locked .letter-area{
+  filter:blur(12px);
+
+  pointer-events:none;
+
+  user-select:none;
+}
+
+body.unlocked .letter-area{
+  filter:none;
+
+  transition:
+    filter 1.5s ease;
+}
+
+
+/* =====================================================
+   LETTER
+===================================================== */
+
+#letter{
+  padding-top:100px;
+  padding-bottom:110px;
+}
+
+.letter-area{
+  position:relative;
+
+  width:min(790px,95%);
+
+  padding:
+    70px
+    clamp(23px,7vw,72px);
+
+  background:var(--paper-light);
+
+  box-shadow:
+    0 30px 70px var(--shadow),
+    8px 10px 0 rgba(72,50,38,.14);
+}
+
+.letter-area::before{
+  content:"";
+
+  position:absolute;
+
+  inset:17px;
+
+  border:1px dashed rgba(36,57,75,.36);
+
+  pointer-events:none;
+}
+
+.letter-area .vintage-stamp{
+  top:38px;
+  right:42px;
+}
+
+.letter-intro{
+  position:relative;
+
+  text-align:center;
+
+  margin-bottom:57px;
+}
+
+.letter-intro small{
+  color:var(--navy);
+
+  font-family:"Special Elite",monospace;
+
+  font-size:9px;
+
+  letter-spacing:3px;
+}
+
+.letter-intro h2{
+  margin:12px 0 0;
+
+  color:var(--brown);
+
+  font-family:"Cormorant Garamond",serif;
+
+  font-size:45px;
+
+  line-height:1;
+}
+
+.letter-text{
+  position:relative;
+
+  margin:
+    0
+    0
+    42px;
+
+  color:var(--ink);
+
+  font-family:"Cormorant Garamond",serif;
+
+  font-size:22px;
+
+  line-height:1.75;
+}
+
+.letter-text.center{
+  text-align:center;
+}
+
+.script{
+  color:var(--brown);
+
+  font-family:"Parisienne",cursive;
+
+  font-size:37px;
+}
+
+
+/* =====================================================
+   PULL PAPER
+===================================================== */
+
+.pull-section{
+  position:relative;
+
+  margin:
+    70px
+    0;
+}
+
+.pull-label{
+  margin-bottom:12px;
+}
+
+.pull-stage{
+  position:relative;
+
+  width:100%;
+
+  height:260px;
+
+  overflow:hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      #657b88,
+      #526a78
+    );
+
+  box-shadow:
+    inset 0 0 30px rgba(20,30,35,.22);
+
+  touch-action:none;
+}
+
+.pull-paper{
+  position:absolute;
+
+  inset:18px;
+
+  padding:30px;
+
+  background:var(--paper-light);
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  text-align:center;
+
+  font-family:"Cormorant Garamond",serif;
+
+  font-size:22px;
+
+  line-height:1.55;
+
+  box-shadow:
+    0 8px 18px rgba(30,25,20,.17);
+}
+
+.pull-tab{
+  position:absolute;
+
+  inset:0;
+
+  z-index:5;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  background:
+    linear-gradient(
+      90deg,
+      #4f6674,
+      #718796
+    );
+
+  cursor:grab;
+
+  touch-action:none;
+
+  user-select:none;
+}
+
+.pull-tab span{
+  padding:14px 20px;
+
+  background:var(--paper-light);
+
+  color:var(--navy);
+
+  font-family:"Special Elite",monospace;
+
+  font-size:9px;
+
+  letter-spacing:1px;
+
+  box-shadow:
+    4px 5px 10px rgba(20,30,35,.22);
+}
+
+.pull-stage.done .pull-tab{
+  transform:translateX(110%);
+
+  transition:
+    transform .85s cubic-bezier(.2,.8,.2,1);
+}
+
+
+/* =====================================================
+   MEMORY CARDS
+===================================================== */
+
+.memories{
+  position:relative;
+
+  margin:
+    75px
+    0;
+}
+
+.memory-title-main{
+  margin-bottom:30px;
+
+  text-align:center;
+
+  color:var(--navy);
+
+  font-family:"Cormorant Garamond",serif;
+
+  font-size:40px;
+}
+
+.memory-grid{
+  display:grid;
+
+  grid-template-columns:repeat(2,1fr);
+
+  gap:20px;
+}
+
+.memory{
+  height:250px;
+
+  perspective:1100px;
+
+  cursor:pointer;
+}
+
+.memory-inner{
+  position:relative;
+
+  width:100%;
+  height:100%;
+
+  transform-style:preserve-3d;
+
+  transition:
+    transform .9s cubic-bezier(.2,.8,.2,1);
+}
+
+.memory.flipped .memory-inner{
+  transform:rotateY(180deg);
+}
+
+.memory-front,
+.memory-back{
+  position:absolute;
+
+  inset:0;
+
+  padding:24px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:center;
+  justify-content:center;
+
+  text-align:center;
+
+  backface-visibility:hidden;
+
+  box-shadow:
+    0 12px 24px rgba(50,40,30,.17);
+}
+
+.memory-front{
+  background:
+    linear-gradient(
+      135deg,
+      #63777e,
+      #526a74
+    );
+
+  color:#eee4d3;
+}
+
+.memory-back{
+  background:var(--paper-light);
+
+  color:var(--ink);
+
+  border:1px dashed var(--navy);
+
+  transform:rotateY(180deg);
+}
+
+.memory-symbol{
+  margin-bottom:13px;
+
+  color:#d7c8af;
+
+  font-family:"Special Elite",monospace;
+
+  font-size:25px;
+}
+
+.memory-name{
+  color:#eee4d3;
+
+  font-family:"Cormorant Garamond",serif;
+
+  font-size:28px;
+}
+
+.memory-hint{
+  margin-top:14px;
+
+  font-family:"Special Elite",monospace;
+
+  font-size:8px;
+
+  letter-spacing:2px;
+}
+
+.memory-back-text{
+  color:var(--brown);
+
+  font-family:"Cormorant Garamond",serif;
+
+  font-size:19px;
+
+  line-height:1.5;
+}
+
+
+/* =====================================================
+   MINI ENVELOPE
+===================================================== */
+
+.mini-envelope-section{
+  position:relative;
+
+  margin:
+    80px
+    0;
+
+  text-align:center;
+}
+
+.mini-envelope{
+  position:relative;
+
+  width:310px;
+  height:190px;
+
+  margin:35px auto;
+
+  cursor:pointer;
+
+  perspective:900px;
+}
+
+.mini-base{
+  position:absolute;
+
+  inset:0;
+
+  background:
+    linear-gradient(
+      145deg,
+      #c4a17d,
+      #a98462
+    );
+
+  box-shadow:
+    0 18px 30px rgba(50,35,25,.23);
+
+  z-index:2;
+}
+
+.mini-letter{
+  position:absolute;
+
+  left:9%;
+
+  bottom:10px;
+
+  width:82%;
+
+  height:145px;
+
+  padding:22px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  background:var(--paper-light);
+
+  color:var(--brown);
+
+  font-family:"Cormorant Garamond",serif;
+
+  font-size:19px;
+
+  line-height:1.4;
+
+  z-index:1;
+
+  transition:
+    transform .85s cubic-bezier(.2,.8,.2,1);
+}
+
+.mini-pocket{
+  position:absolute;
+
+  inset:0;
+
+  background:#b18d6b;
+
+  clip-path:
+    polygon(
+      0 0,
+      50% 58%,
+      100% 0,
+      100% 100%,
+      0 100%
+    );
+
+  z-index:4;
+}
+
+.mini-flap{
+  position:absolute;
+
+  top:0;
+  left:0;
+
+  width:100%;
+  height:120px;
+
+  background:#c09d79;
+
+  clip-path:
+    polygon(
+      0 0,
+      100% 0,
+      50% 78%
+    );
+
+  transform-origin:top center;
+
+  transition:.8s;
+
+  z-index:6;
+}
+
+.mini-envelope.open .mini-flap{
+  transform:rotateX(180deg);
+}
+
+.mini-envelope.open .mini-letter{
+  transform:translateY(-95px);
+
+  z-index:5;
+}
+
+
+/* =====================================================
+   SPECIAL CARD
+===================================================== */
+
+.special{
+  margin:
+    85px
+    0;
+
+  text-align:center;
+}
+
+.special-card{
+  position:relative;
+
+  width:min(530px,100%);
+
+  height:205px;
+
+  margin:30px auto;
+
+  cursor:pointer;
+
+  overflow:hidden;
+
+  box-shadow:
+    0 15px 35px rgba(35,45,45,.2);
+}
+
+.special-cover{
+  position:absolute;
+
+  inset:0;
+
+  z-index:4;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--navy),
+      #344f62
+    );
+
+  color:#e8decc;
+
+  font-family:"Special Elite",monospace;
+
+  font-size:10px;
+
+  letter-spacing:2px;
+
+  transition:
+    transform .9s cubic-bezier(.2,.8,.2,1);
+}
+
+.special-card.open .special-cover{
+  transform:translateY(-105%);
+}
+
+.special-message{
+  position:absolute;
+
+  inset:0;
+
+  padding:30px;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  background:
+    linear-gradient(
+      135deg,
+      #aeb8b6,
+      #c7c3b3
+    );
+
+  color:var(--dark-brown);
+
+  font-family:"Cormorant Garamond",serif;
+
+  font-size:27px;
+
+  line-height:1.45;
+}
+
+
+/* =====================================================
+   ENDING
+===================================================== */
+
+#ending{
+  background:
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(36,57,75,.15),
+      transparent 65%
+    );
+}
+
+.ending-card{
+  position:relative;
+
+  width:min(720px,95%);
+
+  padding:
+    80px
+    28px;
+
+  background:var(--paper);
+
+  box-shadow:
+    0 30px 70px var(--shadow);
+
+  text-align:center;
+}
+
+.ending-card::before{
+  content:"";
+
+  position:absolute;
+
+  inset:17px;
+
+  border:1px dashed rgba(36,57,75,.36);
+}
+
+.ending-card .postmark{
+  position:absolute;
+
+  left:34px;
+  top:35px;
+}
+
+.ending-title{
+  position:relative;
+  z-index:2;
+
+  margin:0;
+
+  color:var(--navy);
+
+  font-family:"Cormorant Garamond",serif;
+
+  font-size:clamp(39px,9vw,65px);
+
+  line-height:.9;
+}
+
+.ending-script{
+  position:relative;
+  z-index:2;
+
+  margin:27px 0 20px;
+
+  color:var(--brown);
+
+  font-family:"Parisienne",cursive;
+
+  font-size:42px;
+}
+
+.ending-copy{
+  position:relative;
+  z-index:2;
+
+  max-width:550px;
+
+  margin:auto;
+
+  color:var(--ink);
+
+  font-family:"Cormorant Garamond",serif;
+
+  font-size:22px;
+
+  line-height:1.6;
+}
+
+
+/* =====================================================
+   FINAL CARD
+===================================================== */
+
+.final-card{
+  position:relative;
+
+  width:220px;
+  height:125px;
+
+  margin:55px auto 18px;
+
+  cursor:pointer;
+
+  perspective:900px;
+}
+
+.final-inner{
+  position:relative;
+
+  width:100%;
+  height:100%;
+
+  transform-style:preserve-3d;
+
+  transition:
+    transform 1s cubic-bezier(.2,.8,.2,1);
+}
+
+.final-card.open .final-inner{
+  transform:rotateX(180deg);
+}
+
+.final-front,
+.final-back{
+  position:absolute;
+
+  inset:0;
+
+  padding:20px;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  text-align:center;
+
+  backface-visibility:hidden;
+
+  box-shadow:
+    5px 8px 18px rgba(40,30,20,.18);
+}
+
+.final-front{
+  background:var(--burgundy);
+
+  color:#eee4d3;
+
+  font-family:"Special Elite",monospace;
+
+  font-size:9px;
+
+  letter-spacing:2px;
+}
+
+.final-back{
+  background:var(--paper-light);
+
+  color:var(--brown);
+
+  font-family:"Cormorant Garamond",serif;
+
+  font-size:19px;
+
+  transform:rotateX(180deg);
+}
+
+
+/* =====================================================
+   FINAL BLOOM
+   vintage paper rosette — NOT flower
+===================================================== */
+
+.rosette{
+  position:relative;
+
+  width:170px;
+  height:170px;
+
+  margin:40px auto 25px;
+
+  cursor:pointer;
+
+  transform:scale(.75);
+
+  transition:
+    transform 1s cubic-bezier(.2,.8,.2,1);
+}
+
+.rosette.open{
+  transform:scale(1);
+}
+
+.rosette-piece{
+  position:absolute;
+
+  left:55px;
+  top:38px;
+
+  width:60px;
+  height:95px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #657985,
+      #465f6e
+    );
+
+  clip-path:
+    polygon(
+      50% 0,
+      100% 28%,
+      80% 100%,
+      20% 100%,
+      0 28%
+    );
+
+  transform-origin:50% 82%;
+
+  transition:
+    1s cubic-bezier(.2,.8,.2,1);
+}
+
+.rosette-piece:nth-child(1){
+  transform:rotate(0deg) translateY(-10px);
+}
+
+.rosette-piece:nth-child(2){
+  transform:rotate(72deg) translateY(-10px);
+}
+
+.rosette-piece:nth-child(3){
+  transform:rotate(144deg) translateY(-10px);
+}
+
+.rosette-piece:nth-child(4){
+  transform:rotate(216deg) translateY(-10px);
+}
+
+.rosette-piece:nth-child(5){
+  transform:rotate(288deg) translateY(-10px);
+}
+
+.rosette.open .rosette-piece:nth-child(1){
+  transform:rotate(0deg) translateY(-40px);
+}
+
+.rosette.open .rosette-piece:nth-child(2){
+  transform:rotate(72deg) translateY(-40px);
+}
+
+.rosette.open .rosette-piece:nth-child(3){
+  transform:rotate(144deg) translateY(-40px);
+}
+
+.rosette.open .rosette-piece:nth-child(4){
+  transform:rotate(216deg) translateY(-40px);
+}
+
+.rosette.open .rosette-piece:nth-child(5){
+  transform:rotate(288deg) translateY(-40px);
+}
+
+.rosette-center{
+  position:absolute;
+
+  left:65px;
+  top:65px;
+
+  width:40px;
+  height:40px;
+
+  border-radius:50%;
+
+  background:var(--burgundy);
+
+  z-index:5;
+}
+
+
+/* =====================================================
+   SIGNATURE
+===================================================== */
+
+.final-signature{
+  position:relative;
+  z-index:3;
+
+  opacity:0;
+
+  transform:translateY(18px);
+
+  transition:1s;
+}
+
+.final-signature.show{
+  opacity:1;
+
+  transform:none;
+}
+
+.final-signature span{
+  color:var(--brown);
+
+  font-family:"Parisienne",cursive;
+
+  font-size:40px;
+}
+
+
+/* =====================================================
+   PAPER SPECKLES / SCRAPS
+===================================================== */
+
+.fleck{
+  position:fixed;
+
+  width:4px;
+  height:4px;
+
+  pointer-events:none;
+
+  z-index:50;
+
+  opacity:.65;
+
+  animation:
+    fall 5s linear forwards;
+}
+
+@keyframes fall{
+
+  0%{
+    transform:
+      translateY(-20px)
+      rotate(0deg);
+
+    opacity:.7;
+  }
+
+  100%{
+    transform:
+      translateY(110vh)
+      translateX(100px)
+      rotate(360deg);
+
+    opacity:0;
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:600px){
+
+  section{
+    padding:
+      65px
+      12px;
+  }
+
+  .opening-paper{
+    padding:
+      72px
+      20px
+      65px;
+  }
+
+  .opening-paper .vintage-stamp{
+    left:25px;
+  }
+
+  .opening-paper .paperclip{
+    right:25px;
+  }
+
+  .opening-title{
+    font-size:43px;
+  }
+
+  .opening-script{
+    font-size:39px;
+  }
+
+  .opening-copy{
+    font-size:20px;
+  }
+
+  .scrapbook-book,
+  .book-page{
+    min-height:425px;
+  }
+
+  .book-title{
+    font-size:46px;
+  }
+
+  .scrap{
+    width:170px;
+
+    padding:17px;
+  }
+
+  .scrap.one{
+    left:22px;
+  }
+
+  .scrap.two{
+    right:18px;
+  }
+
+  .book-postmark{
+    right:18px;
+    top:35px;
+  }
+
+  .envelope-stage{
+    height:475px;
+  }
+
+  .envelope{
+    height:270px;
+  }
+
+  .main-letter-holder{
+    height:300px;
+  }
+
+  .main-letter{
+    min-height:270px;
+
+    padding:
+      30px
+      19px;
+  }
+
+  .envelope-flap{
+    height:160px;
+  }
+
+  .envelope.open .main-letter{
+    transform:translateY(-195px);
+  }
+
+  .seal{
+    top:95px;
+  }
+
+  .letter-area{
+    padding:
+      55px
+      22px;
+  }
+
+  .letter-intro h2{
+    font-size:39px;
+  }
+
+  .letter-text{
+    font-size:20px;
+  }
+
+  .memory-grid{
+    grid-template-columns:1fr;
+  }
+
+  .pull-paper{
+    padding:22px;
+
+    font-size:20px;
+  }
+
+  .ending-card{
+    padding:
+      75px
+      22px;
+  }
+
+}
+
+
+/* =====================================================
+   REDUCE MOTION
+===================================================== */
+
+@media(prefers-reduced-motion:reduce){
+
+  *,
+  *::before,
+  *::after{
+    scroll-behavior:auto!important;
+
+    animation-duration:.01ms!important;
+
+    animation-iteration-count:1!important;
+
+    transition-duration:.01ms!important;
+  }
+
+}
+
+</style>
+</head>
+
+
+<body class="locked">
+
+
+<!-- =====================================================
+     OPENING
+===================================================== -->
+
+<section id="opening">
+
+  <div class="opening-paper paper">
+
+    <div class="tape blue one"></div>
+
+    <div class="vintage-stamp"></div>
+
+    <div
+      class="paperclip"
+      style="right:38px;top:75px;"
+    ></div>
+
+
+    <div class="label">
+      PRIVATE ARCHIVE
+    </div>
+
+
+    <h1 class="opening-title">
+      SOMETHING I WANTED<br>
+      TO SAY
+    </h1>
+
+
+    <div class="opening-script">
+      a little something
+    </div>
+
+
+    <p class="opening-copy">
+      some things are easier to write than to say out loud.
+    </p>
+
+
+    <div class="take-time">
+      take your time.
+    </div>
+
+
+    <div class="postmark opening-postmark">
+      PERSONAL<br>
+      ARCHIVE<br>
+      01
+    </div>
+
+
+    <div class="opening-bottom">
+      ↓ there is something waiting below ↓
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     SCRAPBOOK
+===================================================== -->
+
+<section id="scrapbook">
+
+  <div class="scrapbook-wrap">
+
+    <div
+      class="scrapbook-book"
+      id="scrapbookBook"
+    >
+
+
+      <!-- FRONT -->
+
+      <div class="book-page book-front paper">
+
+        <div class="tape blue one"></div>
+
+        <div class="label">
+          PERSONAL ARCHIVE
+        </div>
+
+        <div class="book-title">
+          things<br>
+          i remember
+        </div>
+
+        <div class="book-small">
+          TAP TO OPEN THE ARCHIVE
+        </div>
+
+      </div>
+
+
+      <!-- BACK -->
+
+      <div class="book-page book-back paper">
+
+        <div class="scrap one">
+
+          <h3>
+            kept here.
+          </h3>
+
+          <p>
+            little memories,<br>
+            random details,<br>
+            things i somehow<br>
+            still remember.
+          </p>
+
+        </div>
+
+
+        <div class="scrap two">
+
+          <p>
+            SOME THINGS<br>
+            ARE WORTH<br>
+            KEEPING.
+          </p>
+
+        </div>
+
+
+        <div class="postmark book-postmark">
+          KUBAR<br>
+          ARCHIVE
+        </div>
+
+
+        <div
+          class="paperclip book-clip"
+        ></div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     ENVELOPE
+===================================================== -->
+
+<section id="envelope">
+
+  <div class="label">
+    LETTER FOUND
+  </div>
+
+
+  <div class="envelope-stage">
+
+
+    <div class="envelope" id="mainEnvelope">
+
+
+      <!-- LETTER -->
+
+      <div class="main-letter-holder">
+
+        <div class="main-letter paper">
+
+          <div
+            class="paperclip"
+            style="right:20px;top:20px;"
+          ></div>
+
+          <div class="hand-note">
+            PRIVATE NOTE / 01
+          </div>
+
+          <h3>
+            a private letter.
+          </h3>
+
+          <p>
+            if you're here, you probably opened the right thing.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- BASE -->
+
+      <div class="envelope-base"></div>
+
+
+      <!-- SIDE FOLDS -->
+
+      <div class="envelope-left"></div>
+
+      <div class="envelope-right"></div>
+
+
+      <!-- FRONT POCKET -->
+
+      <div class="envelope-pocket"></div>
+
+
+      <!-- FLAP -->
+
+      <div class="envelope-flap"></div>
+
+
+      <!-- SEAL -->
+
+      <div
+        class="seal"
+        id="mainSeal"
+      >
+        ✦
+      </div>
+
+
+    </div>
+
+  </div>
+
+
+  <div class="envelope-hint">
+    TAP THE SEAL
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     LOCK
+===================================================== -->
+
+<section id="lock">
+
+  <div class="lock-card">
+
+
+    <div class="label">
+      RESTRICTED NOTE
+    </div>
+
+
+    <h2 class="lock-title">
+      one more thing.
+    </h2>
+
+
+    <div class="lock-sub">
+      this part is not meant to be opened that easily.
+    </div>
+
+
+    <div class="lock-preview">
+
+      <div class="blur-line"></div>
+      <div class="blur-line" style="width:86%"></div>
+      <div class="blur-line" style="width:94%"></div>
+      <div class="blur-line" style="width:72%"></div>
+      <div class="blur-line" style="width:89%"></div>
+      <div class="blur-line" style="width:77%"></div>
+      <div class="blur-line" style="width:92%"></div>
+
+    </div>
+
+
+    <input
+      id="pinInput"
+      class="pin-input"
+      type="text"
+      inputmode="numeric"
+      maxlength="6"
+      placeholder="••••••"
+      autocomplete="off"
+    >
+
+
+    <button
+      id="unlockButton"
+      class="unlock-button"
+    >
+      unlock
+    </button>
+
+
+    <div
+      id="errorMessage"
+      class="error"
+    ></div>
+
+
+    <div
+      id="hintOne"
+      class="hint"
+    >
+      still wrong.
+    </div>
+
+
+    <div
+      id="hintTwo"
+      class="hint"
+    >
+      hmm... kakak serius mau nyerah?
+    </div>
+
+
+    <div
+      id="hintThree"
+      class="hint"
+    >
+      okay. think of a date that belongs to you.
+    </div>
+
+
+    <div
+      id="hintFour"
+      class="hint"
+    >
+      six digits. day, month, year.
+    </div>
+
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     CONFESSION
+===================================================== -->
+
+<section id="letter">
+
+  <div class="letter-area paper">
+
+    <div class="vintage-stamp"></div>
+
+
+    <div class="letter-intro">
+
+      <small>
+        PRIVATE ARCHIVE / UNLOCKED
+      </small>
+
+      <h2>
+        the things i never said
+      </h2>
+
+    </div>
+
+
+    <!-- 01 -->
+
+    <p class="letter-text">
+      hi kak!
+    </p>
+
+
+    <!-- 02 -->
+
+    <p class="letter-text">
+      sebenarnya aku sedikit takut untuk menuliskan hal ini.
+      bahkan sampai sekarang aku masih berpikir,
+      “perlu atau tidak aku membicarakan hal ini?”
+    </p>
+
+
+    <!-- 03 -->
+
+    <p class="letter-text">
+      but honestly, aku rasa aku lebih takut kalau suatu saat nanti aku menyesal
+      karena tidak pernah bisa menyampaikan apa yang sebenarnya aku rasakan.
+    </p>
+
+
+    <!-- 04 -->
+
+    <p class="letter-text">
+      aku masih ingat pertama kali melihat kakak, waktu paskah.
+      waktu itu aku tidak langsung memiliki perasaan apa-apa.
+      hanya sekadar tahu dan melihat kakak sebagai seseorang yang biasa saja.
+    </p>
+
+
+    <!-- =================================================
+         PULL PAPER
+    ================================================= -->
+
+    <div class="pull-section">
+
+      <div class="hand-note pull-label">
+        SOME THINGS ARE BETTER FOUND THAN GIVEN.
+      </div>
+
+
+      <div
+        class="pull-stage"
+        id="pullStage"
+      >
+
+        <div class="pull-paper">
+
+          tapi entah sejak kapan, semakin lama, aku mulai merasa ada sesuatu.
+          awalnya mungkin hanya rasa kagum, lalu perlahan berubah menjadi rasa suka
+          yang sampai sekarang pun aku sendiri masih tidak benar-benar tahu
+          bagaimana menjelaskannya.
+
+        </div>
+
+
+        <div
+          class="pull-tab"
+          id="pullTab"
+        >
+
+          <span>
+            ← PULL WITH YOUR FINGER →
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- 06 -->
+
+    <p class="letter-text">
+
+      yang lucu, sebenarnya kita tidak pernah benar-benar banyak berinteraksi secara langsung.
+      aku bahkan lebih sering hanya melihat kakak ketika natal.
+      tapi somehow, hal-hal kecil tentang kakak selalu berhasil membuat aku senang.
+
+    </p>
+
+
+    <!-- =================================================
+         MEMORY CARDS
+    ================================================= -->
+
+    <div class="memories">
+
+      <div class="memory-title-main">
+        little things i remember
+      </div>
+
+
+      <div class="memory-grid">
+
+
+        <!-- MEMORY 01 -->
+
+        <div class="memory">
+
+          <div class="memory-inner">
+
+
+            <div class="memory-front">
+
+              <div class="memory-symbol">
+                01
+              </div>
+
+              <div class="memory-name">
+                a little chocolate
+              </div>
+
+              <div class="memory-hint">
+                TAP TO FLIP
+              </div>
+
+            </div>
+
+
+            <div class="memory-back">
+
+              <div class="memory-back-text">
+
+                aku masih ingat waktu aku pernah memberikan coklat saat valentine,
+                meskipun aku memberikannya lewat teman dan bukan secara langsung.
+
+              </div>
+
+            </div>
+
+
+          </div>
+
+        </div>
+
+
+        <!-- MEMORY 02 -->
+
+        <div class="memory">
+
+          <div class="memory-inner">
+
+
+            <div class="memory-front">
+
+              <div class="memory-symbol">
+                02
+              </div>
+
+              <div class="memory-name">
+                one little wish
+              </div>
+
+              <div class="memory-hint">
+                TAP TO FLIP
+              </div>
+
+            </div>
+
+
+            <div class="memory-back">
+
+              <div class="memory-back-text">
+
+                atau ketika kakak mengucapkan selamat ulang tahun kepadaku,
+                walaupun terlambat satu hari.
+                mungkin bagi kakak itu hal yang sederhana,
+                tapi aku benar-benar senang waktu itu.
+
+              </div>
+
+            </div>
+
+
+          </div>
+
+        </div>
+
+
+        <!-- MEMORY 03 -->
+
+        <div class="memory">
+
+          <div class="memory-inner">
+
+
+            <div class="memory-front">
+
+              <div class="memory-symbol">
+                03
+              </div>
+
+              <div class="memory-name">
+                christmas
+              </div>
+
+              <div class="memory-hint">
+                TAP TO FLIP
+              </div>
+
+            </div>
+
+
+            <div class="memory-back">
+
+              <div class="memory-back-text">
+
+                aku bahkan lebih sering hanya melihat kakak ketika natal.
+
+              </div>
+
+            </div>
+
+
+          </div>
+
+        </div>
+
+
+        <!-- MEMORY 04 -->
+
+        <div class="memory">
+
+          <div class="memory-inner">
+
+
+            <div class="memory-front">
+
+              <div class="memory-symbol">
+                04
+              </div>
+
+              <div class="memory-name">
+                a tiny streak
+              </div>
+
+              <div class="memory-hint">
+                TAP TO FLIP
+              </div>
+
+            </div>
+
+
+            <div class="memory-back">
+
+              <div class="memory-back-text">
+
+                dan sekarang, kita bahkan bisa punya streak tiktok bersama.
+                it's such a small thing, i know.
+                tapi entah kenapa, aku tetap bisa merasa senang hanya karena
+                hal-hal kecil seperti itu.
+
+              </div>
+
+            </div>
+
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+
+    <!-- 08 -->
+
+    <p class="letter-text">
+
+      mungkin itu yang membuat aku sendiri bingung.
+      bagaimana seseorang yang sebenarnya tidak terlalu sering aku temui
+      dan tidak terlalu banyak berinteraksi denganku bisa memiliki tempat
+      seperti ini dalam pikiranku.
+
+    </p>
+
+
+    <!-- 09 -->
+
+    <p class="letter-text">
+
+      aku tidak tahu sebenarnya harus menyebut perasaan ini apa.
+      yang aku tahu, i've been happy admiring you all this time.
+
+    </p>
+
+
+    <!-- =================================================
+         MINI ENVELOPE
+    ================================================= -->
+
+    <div class="mini-envelope-section">
+
+      <div class="hand-note">
+        apparently, there is another note.
+      </div>
+
+
+      <div
+        class="mini-envelope"
+        id="miniEnvelope"
+      >
+
+
+        <div class="mini-letter">
+
+          aku menyampaikan ini bukan karena aku berharap sesuatu.
+
+        </div>
+
+
+        <div class="mini-base"></div>
+
+        <div class="mini-pocket"></div>
+
+        <div class="mini-flap"></div>
+
+
+      </div>
+
+
+      <div class="hand-note">
+        TAP TO OPEN
+      </div>
+
+    </div>
+
+
+    <!-- 11 -->
+
+    <p class="letter-text">
+
+      dan aku menyampaikan ini bukan karena aku berharap kakak akan membalas
+      perasaan yang sama. i don't expect anything from you.
+      aku juga tidak ingin membuat kakak merasa terbebani atau harus memberikan
+      jawaban tertentu.
+
+    </p>
+
+
+    <!-- 12 -->
+
+    <p class="letter-text center">
+
+      aku cuma ingin kakak tahu.
+
+    </p>
+
+
+    <!-- 13 -->
+
+    <p class="letter-text">
+
+      jujur, aku juga takut setelah ini semuanya menjadi awkward,
+      atau mungkin kakak akan merasa risih.
+      that's honestly one of the reasons why i've been scared to say this.
+
+    </p>
+
+
+    <!-- 14 -->
+
+    <p class="letter-text">
+
+      tapi aku rasa, lebih baik aku mengungkapkan apa yang aku rasakan sekarang
+      daripada suatu saat nanti terus bertanya-tanya,
+      “bagaimana kalau waktu itu aku bilang?”
+
+    </p>
+
+
+    <!-- 15 -->
+
+    <p class="letter-text">
+
+      jadi… this is just my way of finally saying something that i've kept
+      to myself for quite a while.
+
+    </p>
+
+
+    <!-- =================================================
+         SPECIAL CONFESSION CARD
+    ================================================= -->
+
+    <div class="special">
+
+      <div
+        class="special-card"
+        id="specialCard"
+      >
+
+        <div class="special-cover">
+          TAP THIS CARD.
+        </div>
+
+
+        <div class="special-message">
+
+          aku suka dan kagum sama kakak.<br>
+          sesederhana itu.
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- 17 -->
+
+    <p class="letter-text">
+
+      aku tidak tahu setelah ini akan menjadi seperti apa,
+      dan mungkin memang tidak akan mengubah apa-apa.
+      tapi setidaknya sekarang kakak tahu.
+
+    </p>
+
+
+    <!-- 18 -->
+
+    <p class="letter-text center">
+
+      dan entah kenapa, aku tetap senang pernah memiliki rasa sehangat ini
+      kepada kakak.
+
+    </p>
+
+
+    <!-- 19 -->
+
+    <p class="letter-text center script">
+
+      i'm just glad i got to feel this way about you.
+
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     ENDING
+===================================================== -->
+
+<section id="ending">
+
+  <div class="ending-card paper">
+
+
+    <div class="postmark">
+      FINAL<br>
+      ARCHIVE
+    </div>
+
+
+    <div class="label">
+      FINAL NOTE
+    </div>
+
+
+    <h2 class="ending-title">
+      THAT'S ALL I<br>
+      WANTED TO SAY
+    </h2>
+
+
+    <div class="ending-script">
+      thank you for reading.
+    </div>
+
+
+    <div class="ending-copy">
+
+      whatever happens after this, i'm glad i finally had the courage
+      to say it.
+
+    </div>
+
+
+    <!-- FINAL INTERACTION -->
+
+    <div
+      class="final-card"
+      id="finalCard"
+    >
+
+      <div class="final-inner">
+
+        <div class="final-front">
+          ONE LAST THING.
+        </div>
+
+
+        <div class="final-back">
+          you made it all the way here.
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="hand-note">
+      one last tap.
+    </div>
+
+
+    <!-- FINAL ROSETTE -->
+
+    <div
+      class="rosette"
+      id="rosette"
+    >
+
+      <div class="rosette-piece"></div>
+      <div class="rosette-piece"></div>
+      <div class="rosette-piece"></div>
+      <div class="rosette-piece"></div>
+      <div class="rosette-piece"></div>
+
+      <div class="rosette-center"></div>
+
+    </div>
+
+
+    <div class="hand-note">
+      TAP TO FINISH
+    </div>
+
+
+    <div
+      class="final-signature"
+      id="finalSignature"
+    >
+
+      <span>
+        — chelsea
+      </span>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+<script>
+
+/* =====================================================
+   SCRAPBOOK FLIP
+===================================================== */
+
+const scrapbookBook =
+  document.getElementById("scrapbookBook");
+
+scrapbookBook.addEventListener(
+  "click",
+  function(){
+
+    scrapbookBook.classList.add("open");
+
+  }
+);
+
+
+/* =====================================================
+   MAIN ENVELOPE
+===================================================== */
+
+const mainSeal =
+  document.getElementById("mainSeal");
+
+const mainEnvelope =
+  document.getElementById("mainEnvelope");
+
+mainSeal.addEventListener(
+  "click",
+  function(event){
+
+    event.stopPropagation();
+
+    mainEnvelope.classList.add("open");
+
+  }
+);
+
+
+/* =====================================================
+   PIN SYSTEM
+===================================================== */
+
+const pinInput =
+  document.getElementById("pinInput");
+
+const unlockButton =
+  document.getElementById("unlockButton");
+
+const errorMessage =
+  document.getElementById("errorMessage");
+
+const hintOne =
+  document.getElementById("hintOne");
+
+const hintTwo =
+  document.getElementById("hintTwo");
+
+const hintThree =
+  document.getElementById("hintThree");
+
+const hintFour =
+  document.getElementById("hintFour");
+
+
+let attempts = 0;
+
+
+function unlockLetter(){
+
+  const value =
+    pinInput.value.trim();
+
+
+  if(value.length !== 6){
+
+    errorMessage.textContent =
+      "six digits. don't make me guess.";
+
+    return;
+
+  }
+
+
+  /* CORRECT CODE */
+
+  if(value === "231106"){
+
+    document.body.classList.remove("locked");
+
+    document.body.classList.add("unlocked");
+
+
+    errorMessage.textContent =
+      "okay... you got it.";
+
+
+    hintOne.classList.add("show");
+    hintTwo.classList.add("show");
+    hintThree.classList.add("show");
+    hintFour.classList.add("show");
+
+
+    pinInput.style.display =
+      "none";
+
+    unlockButton.style.display =
+      "none";
+
+
+    setTimeout(function(){
+
+      document
+        .getElementById("letter")
+        .scrollIntoView({
+          behavior:"smooth"
+        });
+
+    },1200);
+
+
+    return;
+
+  }
+
+
+  /* WRONG CODE */
+
+  attempts++;
+
+  pinInput.value="";
+
+
+  if(attempts === 1){
+
+    errorMessage.textContent =
+      "still wrong.";
+
+    hintOne.classList.add("show");
+
+  }
+
+  else if(attempts === 2){
+
+    errorMessage.textContent =
+      "hmm... kakak serius mau nyerah?";
+
+    hintOne.classList.add("show");
+
+    hintTwo.classList.add("show");
+
+  }
+
+  else if(attempts === 3){
+
+    errorMessage.textContent =
+      "okay, one tiny clue.";
+
+    hintOne.classList.add("show");
+
+    hintTwo.classList.add("show");
+
+    hintThree.classList.add("show");
+
+  }
+
+  else{
+
+    errorMessage.textContent =
+      "i literally gave you the answer format.";
+
+    hintOne.classList.add("show");
+
+    hintTwo.classList.add("show");
+
+    hintThree.classList.add("show");
+
+    hintFour.classList.add("show");
+
+  }
+
+}
+
+
+unlockButton.addEventListener(
+  "click",
+  unlockLetter
+);
+
+
+pinInput.addEventListener(
+  "keydown",
+  function(event){
+
+    if(event.key === "Enter"){
+
+      unlockLetter();
+
+    }
+
+  }
+);
+
+
+/* =====================================================
+   PULL PAPER
+===================================================== */
+
+const pullStage =
+  document.getElementById("pullStage");
+
+const pullTab =
+  document.getElementById("pullTab");
+
+
+let dragging = false;
+let startX = 0;
+let currentX = 0;
+
+
+pullTab.addEventListener(
+  "pointerdown",
+  function(event){
+
+    dragging = true;
+
+    startX =
+      event.clientX;
+
+    pullTab.setPointerCapture(
+      event.pointerId
+    );
+
+  }
+);
+
+
+pullTab.addEventListener(
+  "pointermove",
+  function(event){
+
+    if(!dragging)
+      return;
+
+
+    currentX =
+      event.clientX - startX;
+
+
+    if(currentX < 0)
+      currentX = 0;
+
+
+    const maximum =
+      pullStage.offsetWidth;
+
+
+    if(currentX > maximum)
+      currentX = maximum;
+
+
+    pullTab.style.transform =
+      `translateX(${currentX}px)`;
+
+  }
+);
+
+
+pullTab.addEventListener(
+  "pointerup",
+  function(){
+
+    dragging = false;
+
+
+    if(
+      currentX >
+      pullStage.offsetWidth * .48
+    ){
+
+      pullStage.classList.add("done");
+
+    }
+
+    else{
+
+      pullTab.style.transition =
+        "transform .5s ease";
+
+      pullTab.style.transform =
+        "translateX(0)";
+
+
+      setTimeout(function(){
+
+        pullTab.style.transition =
+          "";
+
+      },500);
+
+    }
+
+
+    currentX = 0;
+
+  }
+);
+
+
+/* =====================================================
+   MEMORY FLIP
+===================================================== */
+
+document
+  .querySelectorAll(".memory")
+  .forEach(
+    function(card){
+
+      card.addEventListener(
+        "click",
+        function(){
+
+          card.classList.toggle(
+            "flipped"
+          );
+
+        }
+      );
+
+    }
+  );
+
+
+/* =====================================================
+   MINI ENVELOPE
+===================================================== */
+
+const miniEnvelope =
+  document.getElementById("miniEnvelope");
+
+miniEnvelope.addEventListener(
+  "click",
+  function(){
+
+    miniEnvelope.classList.toggle(
+      "open"
+    );
+
+  }
+);
+
+
+/* =====================================================
+   SPECIAL CARD
+===================================================== */
+
+const specialCard =
+  document.getElementById("specialCard");
+
+specialCard.addEventListener(
+  "click",
+  function(){
+
+    specialCard.classList.add(
+      "open"
+    );
+
+  }
+);
+
+
+/* =====================================================
+   FINAL CARD
+===================================================== */
+
+const finalCard =
+  document.getElementById("finalCard");
+
+finalCard.addEventListener(
+  "click",
+  function(){
+
+    finalCard.classList.toggle(
+      "open"
+    );
+
+  }
+);
+
+
+/* =====================================================
+   FINAL ROSETTE
+===================================================== */
+
+const rosette =
+  document.getElementById("rosette");
+
+const finalSignature =
+  document.getElementById("finalSignature");
+
+
+rosette.addEventListener(
+  "click",
+  function(){
+
+    rosette.classList.add(
+      "open"
+    );
+
+
+    setTimeout(
+      function(){
+
+        finalSignature.classList.add(
+          "show"
+        );
+
+        createFlecks();
+
+      },
+      650
+    );
+
+  }
+);
+
+
+/* =====================================================
+   PAPER FLECKS
+===================================================== */
+
+function createFlecks(){
+
+  const fleckColors = [
+    "var(--navy)",
+    "var(--brown)",
+    "var(--olive)",
+    "var(--burgundy)"
+  ];
+
+
+  for(
+    let i = 0;
+    i < 35;
+    i++
+  ){
+
+    const fleck =
+      document.createElement("span");
+
+
+    fleck.className =
+      "fleck";
+
+
+    fleck.style.left =
+      Math.random() * 100 + "vw";
+
+
+    fleck.style.background =
+      fleckColors[
+        Math.floor(
+          Math.random() *
+          fleckColors.length
+        )
+      ];
+
+
+    fleck.style.animationDelay =
+      Math.random() * 1.5 + "s";
+
+
+    fleck.style.animationDuration =
+      4 + Math.random() * 4 + "s";
+
+
+    document.body.appendChild(
+      fleck
+    );
+
+
+    setTimeout(
+      function(){
+
+        fleck.remove();
+
+      },
+      9000
+    );
+
+  }
+
+}
+
+</script>
+
+</body>
+</html>
